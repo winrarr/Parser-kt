@@ -1,1 +1,2 @@
 val hej = 3
+return hej

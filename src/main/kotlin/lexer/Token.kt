@@ -1,17 +1,47 @@
 package lexer
 
-sealed class Token
+enum class TokenType {
+    LEFT_PAREN,
+    RIGHT_PAREN,
+    LEFT_BRACE,
+    RIGHT_BRACE,
+    COMMA,
+    DOT,
+    MINUS,
+    PLUS,
+    SEMICOLON,
+    STAR,
+    BANG_EQUAL,
+    EQUAL_EQUAL,
+    LESS_EQUAL,
+    GREATER_EQUAL,
+    BANG,
+    EQUAL,
+    LESS,
+    GREATER,
+    SLASH,
+    DOUBLE,
+    INTEGER,
+    AND,
+    CLASS,
+    ELSE,
+    FALSE,
+    FOR,
+    FUN,
+    IF,
+    NIL,
+    OR,
+    PRINT,
+    RETURN,
+    SUPER,
+    THIS,
+    TRUE,
+    VAR,
+    WHILE,
+    IDENTIFIER,
+    STRING,
+    VAL,
+    NEWLINE,
+}
 
-sealed class TypeModifier : Token()
-object Val : TypeModifier()
-object Var : TypeModifier()
-
-data class Identifier(val value: String) : Token()
-
-sealed class Operator : Token()
-object Equals : Operator()
-
-
-sealed class Literal : Token()
-
-data class IntLit(val value: String) : Literal()
+data class Token(val tokenType: TokenType, val data: Any?)

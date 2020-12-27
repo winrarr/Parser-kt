@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.4.21"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.4.21"
 }
 
 group = "me.kt"
@@ -14,7 +13,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test-junit"))
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+    implementation(kotlin("reflect"))
 }
 
 tasks.test {
